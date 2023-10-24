@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BankingComponent } from './banking.component';
 import { ListComponent } from '../investimentes/components/list/list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('BankingComponent', () => {
   let component: BankingComponent;
@@ -14,7 +15,7 @@ describe('BankingComponent', () => {
    beforeEach (async () =>{
    await TestBed.configureTestingModule ({
    declarations: [BankingComponent, ListComponent],
-
+   imports : [HttpClientModule],
   }).compileComponents();
 
    } );
