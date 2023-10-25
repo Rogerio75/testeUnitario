@@ -64,12 +64,15 @@ it ('(U) should be list all investiments', (done)=> {
   service.list().subscribe(
      (res: Array<Investiments>) =>{
        expect (res[0].name).toEqual('Itaú');
-     }
+       expect (res[0].value).toEqual (100);
+       expect (res[4].name).toEqual('Banco 5');
+       expect (res[4].value).toEqual (100);
 
-  )  //done()
+       done();
+     });
 
-});
-
-
-
+    const req = httpTestingController.expectOne(URL)
+     req.flush(mockList);
+     expect (req.request.method).toEqual('GET');
+ });
 });
