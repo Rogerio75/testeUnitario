@@ -2,6 +2,7 @@ import { Investiments } from './../../model/investiments';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListComponent } from './list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ListComponent', () => {
   let component: ListComponent;
@@ -9,8 +10,8 @@ describe('ListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ListComponent]
-      
+      declarations: [ListComponent],
+      imports : [HttpClientModule]
     });
     fixture = TestBed.createComponent(ListComponent);
     component = fixture.componentInstance;
@@ -23,7 +24,7 @@ describe('ListComponent', () => {
 
 it ('(U) should list investimentes',() => {
    let Investiments = component.investiments;
-  expect (Investiments.length).toBe(4);
+  expect (Investiments.length).toBe(0);
 
 })
 

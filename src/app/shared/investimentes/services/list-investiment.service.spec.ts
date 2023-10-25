@@ -15,7 +15,8 @@ describe('ListInvestimentService', () => {
   let httpClient: HttpClient;
   const URL =
     'https://raw.githubusercontent.com/troquatte/fake-server/main/investiments-all.json';
-  const mockList: Array <Investiments> = [
+
+    const mockList: Array <Investiments> = [
     {
      name:'Itaú',
      value: 100
@@ -57,4 +58,18 @@ describe('ListInvestimentService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+
+it ('(U) should be list all investiments', (done)=> {
+  service.list().subscribe(
+     (res: Array<Investiments>) =>{
+       expect (res[0].name).toEqual('Itaú');
+     }
+
+  )  //done()
+
+});
+
+
+
 });
