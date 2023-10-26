@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { ListInvestimentService } from './list-investiment.service';
 import { Investiments } from '../model/investiments';
+import { MOCK_LIST } from './list-investiments.mock';
 
 
 describe('ListInvestimentService', () => {
@@ -16,28 +17,7 @@ describe('ListInvestimentService', () => {
   const URL =
     'https://raw.githubusercontent.com/troquatte/fake-server/main/investiments-all.json';
 
-    const mockList: Array <Investiments> = [
-    {
-     name:'Itaú',
-     value: 100
-    },
-    {
-      name:'Banco do Brasil',
-      value: 100
-     },
-     {
-      name:'Bradesco',
-      value: 100
-     },
-     {
-      name:'Nubank',
-      value: 100
-     },
-     {
-      name:'Banco 5',
-      value: 100
-     }
-  ]
+    const mockList: Array <Investiments> = MOCK_LIST;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
